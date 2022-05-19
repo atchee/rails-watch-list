@@ -1,9 +1,20 @@
 <h1>All movie lists</h1>
-<ul>
-  <% @lists.each do |list| %>
-  <li><%= link_to list.name, list_path(list) %></li>
-  <% end %>
-</ul>
+
+<div class="card-group">
+  <div class="row">
+    <% @lists.each do |list| %>
+      <div class="col-4">
+        <div class="card">
+          <img class="card-img-top" src="https://source.unsplash.com/random/50×50" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><%= link_to list.name, list_path(list) %></h5>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+</div>
 
 <br><br>
 <%= link_to "Add a list", new_list_path %>
